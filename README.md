@@ -1,47 +1,74 @@
-# web-ai
+# 🧠 web-ai
 
-이 레포지토리는 뇌 MRI 데이터와 임상 정보를 활용하여 MMSE(Mini-Mental State Examination) 점수를 예측하는 인공지능 모델 연구를 위한 Jupyter Notebook 모음입니다.  
-본 프로젝트는 논문 연구를 위해 진행되었으며, 다양한 딥러닝 접근법을 실험합니다.
+뇌 MRI 영상과 임상 정보를 통합하여 **MMSE (Mini-Mental State Examination)** 점수를 예측하는 딥러닝 기반 인공지능 모델 연구 프로젝트입니다.  
+본 프로젝트는 **알츠하이머병(AD)** 조기 진단을 목표로 하며, 다양한 슬라이스 범위와 메타데이터 조합을 실험하였습니다.
 
-## 주요 노트북 및 기능
+📌 해당 연구는 다음과 같은 **학술적 성과**를 이루었습니다:
 
-### 1. MMSE Prediction  
-- **파일:** `oasis2_slice_10mm_serial.ipynb`  
-- **설명:**  
-  - 본 노트북은 알츠하이머병(AD) 환자의 MMSE 점수를 예측하기 위해 CNN-LSTM 모델을 구현합니다.
-  - OASIS-2 데이터셋의 MRI 슬라이스(central, ±10mm, ±15mm)와 메타데이터를 활용합니다.
-  - 두 가지 데이터셋(central+±10mm 슬라이스(10mm dataset), central+±10mm+±15mm 슬라이스(combined dataset))을 생성하여 실험합니다.
-  - VGG16을 이용해 MRI 이미지에서 특징을 추출하고, 이를 메타데이터와 결합하여 MMSE 점수를 예측합니다.
-  - 10mm 모델이 combined 모델보다 더 우수한 성능(MSE 0.527, MAE 0.509)을 보였습니다.
-  - 본 연구는 MRI와 메타데이터를 활용한 MMSE 점수 예측이 AD의 조기 진단에 유용함을 시사합니다.
+- 🧾 **대한의료정보학회 춘계학술대회 2024** 포스터 발표  
+  - 논문: *A Deep Learning Model for Early Diagnosis of Alzheimer's Disease Using Multi-Slice MRI and Metadata Integration*
+- 🥉 **ACK 2024 학술발표대회** 논문 **동상 수상**  
+  - 논문: *Prognosis Prediction of Alzheimer's Disease: Multi-Horizon MMSE Prediction from MRI and Metadata*
 
-### 2. Multi-slice & Metadata  
-- **파일:** `oasis2_slice_metadata_combined.ipynb`  
-- **설명:**  
-  - 본 노트북은 다중 슬라이스 MRI 이미지와 환자의 임상 메타데이터(나이, 성별, MMSE, 교육 수준, SES)를 통합 분석하여 알츠하이머병(AD) 진단 정확도를 높이는 딥러닝 모델을 구현합니다.
-  - OASIS 데이터셋을 활용하여 Non-Demented, Demented, Converted 세 가지로 분류하며, ±10mm, ±15mm, 그리고 결합 데이터셋을 사용합니다.
-  - VGG16(Pretrained ImageNet) 기반의 모델에 추가적인 fully connected layer를 쌓아 학습하며, Adam optimizer로 최적화합니다.
-  - 모델 성능은 accuracy, loss, precision, recall, F1-score 등 다양한 지표로 평가합니다.
-  - 다중 슬라이스와 메타데이터(특히 Age, Sex, MMSE)를 결합한 모델이 95% accuracy, 95% precision, 92% recall, 94% F1-score로 가장 우수한 성능을 보였습니다.
-  - 슬라이스 범위 확장과 메타데이터 결합이 성능 향상에 크게 기여하였으며, 모든 클래스에서 균형 잡힌 결과를 확인하였습니다.
-  - 본 연구는 뇌 영상의 공간적 변화와 임상 정보를 함께 고려하는 것이 미세한 신경퇴행성 변화를 감지하는 데 중요함을 시사합니다.
-  - 향후 연구에서는 데이터셋 확장 및 모델 고도화를 통해 임상 적용 가능성을 높일 예정입니다.
+> 본 프로젝트의 모든 저자는 **공동 제1저자(Co-first authors)**로서 연구에 동등하게 기여하였습니다.
 
-## 데이터셋
+---
 
-- **OASIS2**: 공개 뇌 MRI 및 임상 데이터셋  
-  - [OASIS 브레인 프로젝트](https://www.oasis-brains.org/)
-  - 데이터 다운로드 및 사용 방법은 각 노트북의 안내를 참고하세요.
+## 📒 주요 노트북 및 기능
 
-## 실행 환경
+### 1. MMSE 점수 예측 (Regression)
+- **파일:** `oasis2_slice_10mm_serial.ipynb`
+- **내용 요약:**
+  - CNN + LSTM 구조로 MMSE 점수 회귀 예측
+  - MRI 중앙 슬라이스와 ±10mm, ±15mm 슬라이스 활용
+  - VGG16 기반 CNN으로 영상 특징 추출 + LSTM으로 시계열 맥락 반영
+  - 10mm 모델이 combined 모델보다 우수한 성능 달성  
+    - `MSE: 0.527`, `MAE: 0.509`
+  - **의의:** 영상 기반 MMSE 예측이 AD 조기 진단에 유효함을 시사
 
-- Python 3.8 이상 권장
-- 주요 라이브러리:  
-  - numpy, pandas, scikit-learn, matplotlib, seaborn  
-  - tensorflow 또는 pytorch (노트북별로 상이)
-  - jupyter notebook
+### 2. 다중 슬라이스 + 메타데이터 기반 AD 분류 (Classification)
+- **파일:** `oasis2_slice_metadata_combined.ipynb`
+- **내용 요약:**
+  - MRI 슬라이스와 임상 메타데이터(age, sex, MMSE, education, SES) 통합
+  - VGG16 + fully connected layer 구조
+  - AD 3-class 분류 (Non-Demented / Demented / Converted)
+  - 최종 모델 성능:
+    - `Accuracy: 95%`, `Precision: 95%`, `Recall: 92%`, `F1-score: 94%`
+  - **의의:** 공간적 영상 변화 + 메타데이터 결합이 진단 정확도에 큰 기여
 
-## 참고 및 인용
+---
 
-- 본 레포지토리의 실험 및 결과는 논문 연구의 일부로 활용되었습니다.
-- 논문, 데이터셋, 코드 인용 시 반드시 원 저작자를 명시해 주세요.
+## 📊 데이터셋
+
+- **OASIS-2**: 공개 뇌 MRI 및 임상 데이터셋  
+  - MRI 3D T1-weighted 영상 → 중앙 슬라이스 + ±10mm, ±15mm 슬라이스 추출  
+  - 메타데이터: Age, Sex, MMSE, Education, SES  
+  - 데이터 출처: [OASIS 홈페이지](https://www.oasis-brains.org/)
+
+---
+
+## ⚙️ 실행 환경
+
+- **Python:** 3.8 이상
+- **사용 라이브러리:**
+  - `numpy`, `pandas`, `matplotlib`, `seaborn`, `scikit-learn`
+  - `tensorflow` 또는 `torch` (노트북에 따라 상이)
+  - `jupyter notebook`
+
+---
+
+## 📝 참고 및 인용
+
+이 프로젝트는 아래 두 논문에 기반한 연구입니다:
+
+### 📌 대한의료정보학회 춘계학술대회 2024
+> Cho C., Moon S., Song Y., Jang J. (2024).  
+> *A Deep Learning Model for Early Diagnosis of Alzheimer's Disease Using Multi-Slice MRI and Metadata Integration*.  
+> 대한의료정보학회 춘계학술대회 포스터 발표
+
+### 📌 ACK 2024 학술발표대회
+> Cho C., Moon S., Song Y., Jang J. (2024).  
+> *Prognosis Prediction of Alzheimer's Disease: Multi-Horizon MMSE Prediction from MRI and Metadata*.  
+> ACK 2024 논문집 제31권 제2호, 동상 수상작
+
+논문 또는 코드를 인용하실 경우, 반드시 해당 저자를 명시해 주세요.
