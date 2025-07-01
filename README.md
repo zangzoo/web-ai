@@ -5,9 +5,9 @@
 
 📌 해당 연구는 다음과 같은 **학술적 성과**를 이루었습니다:
 
-- 🧾 **대한의료정보학회 춘계학술대회 2024** 포스터 발표  
+- 🧾 **대한의료정보학회 춘계학술대회 (2024)** 포스터 발표  
   - 논문: *A Deep Learning Model for Early Diagnosis of Alzheimer's Disease Using Multi-Slice MRI and Metadata Integration*
-- 🥉 **ACK 2024 학술발표대회** 논문 **동상 수상**  
+- 🥉 **ACK 한국정보처리학회 학술발표대회 (2024)** 논문 **동상 수상**  
   - 논문: *Prognosis Prediction of Alzheimer's Disease: Multi-Horizon MMSE Prediction from MRI and Metadata*
 
 > 본 프로젝트의 모든 저자는 **공동 제1저자(Co-first authors)**로서 연구에 동등하게 기여하였습니다.
