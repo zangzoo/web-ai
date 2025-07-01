@@ -66,7 +66,7 @@
 > *A Deep Learning Model for Early Diagnosis of Alzheimer's Disease Using Multi-Slice MRI and Metadata Integration*.  
 > 대한의료정보학회 춘계학술대회 포스터 발표
 
-### 📌 ACK 2024 학술발표대회
+### 📌 ACK 한국정보처리학회 2024
 > Cho C., Moon S., Song Y., Jang J. (2024).  
 > *Prognosis Prediction of Alzheimer's Disease: Multi-Horizon MMSE Prediction from MRI and Metadata*.  
 > ACK 2024 논문집 제31권 제2호, 동상 수상작
