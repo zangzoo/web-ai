@@ -72,3 +72,13 @@
 > ACK 2024 논문집 제31권 제2호, 동상 수상작
 
 논문 또는 코드를 인용하실 경우, 반드시 해당 저자를 명시해 주세요.
+
+---
+
+## 📎 논문 PDF
+
+- [📄 의료정보학회 발표 논문 (2024)](https://drive.google.com/file/d/1dbiCpb2bz-N80J7KH8Wulh0q4p1TyCka/view?usp=drive_link)  
+  *A Deep Learning Model for Early Diagnosis of Alzheimer's Disease Using Multi-Slice MRI and Metadata Integration*
+
+- [🥉 ACK 2024 수상 논문 (동상)](https://drive.google.com/file/d/1TAbvF0PwFMSDRorrUg6_eCjNLEYiTP4O/view?usp=drive_link)  
+  *Prognosis Prediction of Alzheimer's Disease: Multi-Horizon MMSE Prediction from MRI and Metadata*
